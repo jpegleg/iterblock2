@@ -13,18 +13,14 @@ except Exception:
 try:
     characters = (str(sys.argv[1]))
 except Exception:
-    print('No valid str provided as first argument! Executing with default character list of alpha-numeric english.')
-    os.system('sleep 2')
-    characters = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+    sys.exit('No valid str provided as first argument! Pass a string as the first argument to the script: python3 iterblock.py "abc" 3')
 
 try:
     counts = (int(sys.argv[2]))
 except Exception:
-    print('No valid int provided as second argument! Executing with default number of word-length as 4 characters.')
-    os.system('sleep 2')
-    counts = int('4')
-finally:
-    characters = set(characters)
+    sys.exit('No valid int provided as second argument! Pass an integer as the second argument to the script: python3 iterblock.py "abc" 8')
+
+characters = set(characters)
 
 iblock = itertools.product(characters, repeat=counts)
 
