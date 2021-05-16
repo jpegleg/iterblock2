@@ -8,6 +8,8 @@ python3 iterblock.py " 1!2@3#4$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDf
 > /mnt/wordlists/6_large.out &
 ```
 
+Doublequotes around the first arg allow escaped doublequote and single quotes, as well as anything else as the character string.
+Singlequotes around the first arg allow double quotes but single quotes will get ignored if there are two and error if one then.
 
 Another example in a screenshot with an emoji and a short list of characters and writing a file with all combinations of those, 4 characters long:
 
