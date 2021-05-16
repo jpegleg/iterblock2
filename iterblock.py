@@ -10,9 +10,20 @@ try:
 except Exception:
     diskCheck = str('inactive')
 
-finally:
+try:
     characters = (str(sys.argv[1]))
+except Exception:
+    print('No arguments provided! Executing with default character list of alpha-numeric english.')
+    os.system('sleep 2')
+    characters = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+
+try:
     counts = (int(sys.argv[2]))
+except Exception:
+    print('No arguments provided! Executing with default number of world-length as 4 characters.')
+    os.system('sleep 2')
+    counts = int('4')
+finally:
     characters = set(characters)
 
 iblock = itertools.product(characters, repeat=counts)
