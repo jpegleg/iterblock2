@@ -23,6 +23,10 @@ If you create a json file in the directory where the script is executed named in
 ```
 {"DISKCHECK": "enable"}
 ```
+Then iterblock.py will call the system shell to check the disk usage of the partition it is running in
+and will exit once it reaches 90% usage or greater if that condition is met before the block is fully written to disk. 
+This does slow down the file, but creates a disk-aware more cautious option.
+
 
 Otherwise you will want DISKCHECK set to any other value:
 
@@ -31,9 +35,6 @@ Otherwise you will want DISKCHECK set to any other value:
 {"DISKCHECK": "disableit"}
 ```
 
-Then iterblock.py will call the system shell to check the disk usage of the partition it is running in
-and will exit once it reaches 90% usage or greater if that condition is met before the block is fully written to disk. 
-This does slow down the file, but creates a disk-aware more cautious option.
 
 ## Just right into RAM, okay
 
