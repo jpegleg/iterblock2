@@ -25,6 +25,8 @@ Then iterblock.py will call the system shell to check the disk usage of the part
 and will exit once it reaches 90% usage or greater if that condition is met before the block is fully written to disk. 
 This does slow down the file, but creates a disk-aware more cautious option.
 
+## Just right into memory, okay
+
 Instead of to disk, it can be used to insert into memory. The order of the characters in the first argument dictactes the iteration order.
 So if you start your argument with abc, the iterations will start with a as the leading character. This can be used to create threads
 with different starting positions, or insert specific strings or groups of strings into memory and then exit, use it in memory, then
