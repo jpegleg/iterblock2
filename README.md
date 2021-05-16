@@ -22,6 +22,16 @@ If you create a json file in the directory where the script is executed named in
 ```
 
 Then iterblock.py will call the system shell to check the disk usage of the partition it is running in
-and will exit once it reaches 90% usage or greater. This does slow down the file, but creates a 
-disk-aware more cautious option.
+and will exit once it reaches 90% usage or greater if that condition is met before the block is fully written to disk. 
+This does slow down the file, but creates a disk-aware more cautious option.
+
+Instead of to disk, it can be used to insert into memory. The order of the characters in the first argument dictactes the iteration order.
+So if you start your argument with abc, the iterations will start with a as the leading character. This can be used to create threads
+with different starting positions, or insert specific strings or groups of strings into memory and then exit, use it in memory, then
+shift the argument position order, insert into memory, and repeat etc. So even if you don't have enough disk space, you could generate
+chunks and iterate the argument list starting position after testing the wordlist.
+
+```
+load1=$(python3 iterblock.py '音~Ѧ🚆1234567890' 3)
+```
 
