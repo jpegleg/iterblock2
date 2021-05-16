@@ -15,7 +15,7 @@ Another example in a screenshot with an emoji and a short list of characters:
 
 ## Disk check feature
 
-If you create a json file in the directory where the script is executed with this in it:
+If you create a json file in the directory where the script is executed named interblock.json with this in it:
 
 ```
 {"DISKCHECK": "enable"}
