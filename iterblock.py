@@ -3,14 +3,17 @@ import json
 import sys
 import os
 
-with open("./iterblock.json", "r") as f:
-    gconfig = json.load(f)
+try:
+    with open("./iterblock.json", "r") as f:
+        gconfig = json.load(f)
+    diskCheck = str(gconfig["DISKCHECK"])
+except Exception:
+    diskCheck = str('inactive')
 
-diskCheck = str(gconfig["DISKCHECK"])
-
-characters = (str(sys.argv[1]))
-counts = (int(sys.argv[2]))
-characters = set(characters)
+finally:
+    characters = (str(sys.argv[1]))
+    counts = (int(sys.argv[2]))
+    characters = set(characters)
 
 iblock = itertools.product(characters, repeat=counts)
 
