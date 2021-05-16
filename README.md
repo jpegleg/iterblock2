@@ -1,5 +1,5 @@
 # iterblock2
-A wordlist file generator for bruteforcing and dictionary attacks with support for emojis and other langues.
+A wordlist file generator for bruteforcing and dictionary attacks with support for emojis and other languages.
 
 Example usage that includes space charactesr and all standard english keyboard characters, every combination of 6:
 
