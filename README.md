@@ -16,7 +16,7 @@ Another example in a screenshot with an emoji and a short list of characters and
 ![iterblock_screenshot](https://keeganbowen.com/images/iterblock_screenshot_1.PNG)
 
 
-## Disk check feature
+## Disk check feature and the iterblock.json config
 
 If you create a json file in the directory where the script is executed named interblock.json with this in it:
 
