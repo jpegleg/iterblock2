@@ -1,6 +1,12 @@
 import itertools
+import json
 import sys
 import os
+
+with open("./iterblock.json", "r") as f:
+    gconfig = json.load(f)
+
+diskCheck = str(gconfig["DISKCHECK"])
 
 characters = (str(sys.argv[1]))
 counts = (int(sys.argv[2]))
@@ -15,9 +21,11 @@ def diskcheck():
         sys.exit("Exiting because disk space is 90% or greater in the $pwd")
 
 def iterated(iblock):
+    '''If the diskcheck config is set, check disk, otherwise just execute the iteration.'''
     for i in iblock:
-        diskcheck()
+        if diskCheck == "enable":
+            diskcheck()
         print (''.join(i))
 
-        
+
 iterated(iblock)
