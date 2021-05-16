@@ -10,6 +10,7 @@ diskCheck = str(gconfig["DISKCHECK"])
 
 characters = (str(sys.argv[1]))
 counts = (int(sys.argv[2]))
+characters = set(characters)
 
 iblock = itertools.product(characters, repeat=counts)
 
