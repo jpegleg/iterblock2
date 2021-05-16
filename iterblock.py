@@ -13,14 +13,14 @@ except Exception:
 try:
     characters = (str(sys.argv[1]))
 except Exception:
-    print('No arguments provided! Executing with default character list of alpha-numeric english.')
+    print('No valid str provided as first argument! Executing with default character list of alpha-numeric english.')
     os.system('sleep 2')
     characters = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 
 try:
     counts = (int(sys.argv[2]))
 except Exception:
-    print('No arguments provided! Executing with default number of word-length as 4 characters.')
+    print('No valid int provided as second argument! Executing with default number of word-length as 4 characters.')
     os.system('sleep 2')
     counts = int('4')
 finally:
