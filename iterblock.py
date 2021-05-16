@@ -20,7 +20,7 @@ except Exception:
 try:
     counts = (int(sys.argv[2]))
 except Exception:
-    print('No arguments provided! Executing with default number of world-length as 4 characters.')
+    print('No arguments provided! Executing with default number of word-length as 4 characters.')
     os.system('sleep 2')
     counts = int('4')
 finally:
