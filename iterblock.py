@@ -31,12 +31,19 @@ def diskcheck():
     if alertsize == 0:
         sys.exit("Exiting because disk space usage is 90% or greater in the $pwd partition.")
 
+def iteratedCareful(iblock):
+    '''If the DISKCHECK config value is enable, check disk, otherwise just execute the iteration.'''
+    for i in iblock:
+        diskcheck()
+        print (''.join(i))
+
 def iterated(iblock):
     '''If the DISKCHECK config value is enable, check disk, otherwise just execute the iteration.'''
     for i in iblock:
-        if diskCheck == "enable":
-            diskcheck()
         print (''.join(i))
 
 
-iterated(iblock)
+if diskCheck == "enable":
+    iteratedCareful(iblock)
+else:
+    iterated(iblock)
