@@ -29,7 +29,7 @@ def diskcheck():
     sized = 'df . | tail -n1 | awk \'{print $5}\' | grep "^9\|^100"'
     alertsize = os.system(sized)
     if alertsize == 0:
-        sys.exit("Exiting because disk space is 90% or greater in the $pwd")
+        sys.exit("Exiting because disk space usage is 90% or greater in the $pwd partition.")
 
 def iterated(iblock):
     '''If the diskcheck config is set, check disk, otherwise just execute the iteration.'''
