@@ -1,11 +1,13 @@
 # iterblock2
 A wordlist file generator for bruteforcing and dictionary attacks with support for emojis, space characters, all special characters, and other languages.
 
-Example usage that includes space character and all standard english keyboard characters, every combination of 6:
+Example usage that includes space character and all standard english keyboard characters, every combination of 6,
+while additionally measuring the execution time and setting the kernel priority to the default "nice" value to be increased
+by 10, deprioritizing it some in the linux kernel scheduler:
 
 ```
  
-time nice python3 iterblock.py " 1\!2@3#4\$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDfgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/\?" 6 > /mnt/wordlists/6_large.out &
+time nice -n 10 python3 iterblock.py " 1\!2@3#4\$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDfgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/\?" 6 > /mnt/wordlists/6_large.out &
  
 ```
 
