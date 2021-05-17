@@ -4,9 +4,9 @@ A wordlist file generator for bruteforcing and dictionary attacks with support f
 Example usage that includes space charactesr and all standard english keyboard characters, every combination of 6:
 
 ```
- python3 iterblock.py " 1!2@3#4$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDfgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/?" 6
-
-> /mnt/wordlists/6_large.out &
+ 
+ python3 iterblock.py " 1!2@3#4$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDfgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/?" 6 > /mnt/wordlists/6_large.out &
+ 
 ```
 
 Doublequotes around the first arg allow escaped doublequote and single quotes, as well as anything else as the character string.
