@@ -11,6 +11,15 @@ Example usage that includes space character and all standard english keyboard ch
 
 Doublequotes around the first arg allow escaped doublequote and single quotes, as well as anything else as the character string.
 Singlequotes around the first arg allow double quotes but single quotes will get ignored if there are two and error if one then.
+Some characters you will find you need to escape with a \ character such as double quotes and backticks and sometimes bash special characters.
+
+```
+python3 iterblock.py "~\`\!1@2#3$4%5^6&7*8(9)0_-+={[}]|\:;\"\'<,>.?/" 2 
+
+```
+
+It doesn't duplicate the \ backslash characters or any other character in the string because it is cast to a set before use.
+
 
 Another example in a screenshot with an emoji and a short list of characters and writing a file with all combinations of those, 4 characters long:
 
