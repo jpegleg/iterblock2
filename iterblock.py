@@ -32,13 +32,13 @@ def diskcheck():
         sys.exit("Exiting because disk space usage is 90% or greater in the $pwd partition.")
 
 def iteratedCareful(iblock):
-    '''If the DISKCHECK config value is enable, check disk, otherwise just execute the iteration.'''
+    '''Run a shell and check the df . and ensure not 90% or greater usage or exit. Otherwise iterate.'''
     for i in iblock:
         diskcheck()
         print (''.join(i))
 
 def iterated(iblock):
-    '''If the DISKCHECK config value is enable, check disk, otherwise just execute the iteration.'''
+    '''Execute the iteration of all possible values of the character set for the int length string.'''
     for i in iblock:
         print (''.join(i))
 
