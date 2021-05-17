@@ -25,7 +25,7 @@ characters = set(characters)
 iblock = itertools.product(characters, repeat=counts)
 
 def diskcheck():
-    '''Check disk usage'''
+    '''Check disk usage via system shell, using the linux or bsd df, tail, awk, and grep.'''
     sized = 'df . | tail -n1 | awk \'{print $5}\' | grep "^9\|^100"'
     alertsize = os.system(sized)
     if alertsize == 0:
