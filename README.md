@@ -29,7 +29,8 @@ and will exit once it reaches 90% usage or greater if that condition is met befo
 This does slow down the file, but creates a disk-aware more cautious option.
 
 
-Otherwise you will want DISKCHECK set to any other value:
+The default is not to use the disk check. If you have the JSON file in place but want it disabled, you will want DISKCHECK set to any other value.
+This will use the iterblock.json to not use the disk check mode while having a iterblock.json config in place:
 
 
 ```
