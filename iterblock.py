@@ -26,14 +26,25 @@ iblock = itertools.product(characters, repeat=counts)
 
 def diskcheck():
     '''Check disk usage via system shell, using the linux or bsd df, tail, awk, and grep.'''
-    sized = 'df . | tail -n1 | awk \'{print $5}\' | grep "^9\|^100"'
+    sized = 'nice df . | tail -n1 | awk \'{print $5}\' | grep "^9\|^100"'
+    # Best practice would be to move this to subshell instead of using os.system,
+    # however I don't feel the need to do that in this case. It is a low priority call.
     alertsize = os.system(sized)
+    # Check the exit code for "success" being the condition to trigger an exit.
+    # The "success" is the exit code 0, which will be returned if the shell program
+    # is successful. This will mean that if the shell program exits in error or fails
+    # the diskcheck function will not trigger a iterblock.py exit by design.
+    # This allows extended compatibility to other systems and de-prioritizes the 
+    # disk check with the idea that we typically don't want to do that anyways.
     if alertsize == 0:
         sys.exit("Exiting because disk space usage is 90% or greater in the $pwd partition.")
 
 def iteratedCareful(iblock):
     '''Run a shell and check the df . and ensure not 90% or greater usage or exit. Otherwise iterate.'''
     for i in iblock:
+        # Even though this could be included in the iterated function instead of
+        # being here in its own function, it is a performance optimization to have 
+        # two separate functions with a switch.
         diskcheck()
         print (''.join(i))
 
