@@ -5,7 +5,7 @@ Example usage that includes space character and all standard english keyboard ch
 
 ```
  
- python3 iterblock.py " 1!2@3#4$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDfgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/?" 6 > /mnt/wordlists/6_large.out &
+time nice python3 iterblock.py " 1\!2@3#4\$5%6^7&8*9(0)-_=+qQwWeErRtTyYuUiIoOpP[{]}\|aAsSdDfgGhHjJkKlL;:\"'zZxXcCvVbBnNmM,<.>/\?" 6 > /mnt/wordlists/6_large.out &
  
 ```
 
