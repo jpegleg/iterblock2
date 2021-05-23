@@ -1,6 +1,8 @@
 # iterblock2
 A wordlist file generator for bruteforcing and dictionary attacks with support for emojis, space characters, all special characters, and other languages.
 
+iterblock2 is roughly 3x slower than crunch: https://github.com/crunchsec/crunch/   however iterblock2 has some different features and can use more types of characters.
+
 Example usage that includes space character and all standard english keyboard characters, every combination of 6,
 while additionally measuring the execution time and setting the kernel priority to the default "nice" value to be increased
 by 10, deprioritizing it some in the linux kernel scheduler:
